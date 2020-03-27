@@ -1,1 +1,1 @@
-[My personal website](https://github.com/chrisjterry/Personal)
+[My personal website](https://christerry.dev/)
