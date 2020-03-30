@@ -7,22 +7,28 @@ const initPage = () => {
     setTimeout(() => i = 6, 4000);
     setTimeout(() => typeGoodWelcome(i), 4500);
     setTimeout(() => i = 0, 8000);
-    setTimeout(() => typeResume(i), 8500);
+    setTimeout(() => typeMaterials(i), 8500);
     setTimeout(() => i = 0, 9000);
-    setTimeout(() => typeGitHub(i), 9500);
+    setTimeout(() => typeResume(i), 9500);
     setTimeout(() => i = 0, 10000);
-    setTimeout(() => typeLinkedIn(i), 10500);
+    setTimeout(() => typeProfiles(i), 10500);
     setTimeout(() => i = 0, 11000);
-    setTimeout(() => typeAngelList(i), 11500);
+    setTimeout(() => typeGitHub(i), 11500);
     setTimeout(() => i = 0, 12000);
-    setTimeout(() => typeCryptoList(i), 12500);
+    setTimeout(() => typeLinkedIn(i), 12500);
     setTimeout(() => i = 0, 13000);
-    setTimeout(() => typeHikeSF(i), 13500);
+    setTimeout(() => typeAngelList(i), 13500);
     setTimeout(() => i = 0, 14000);
-    setTimeout(() => typeTalkie(i), 14500);
+    setTimeout(() => typeProjects(i), 14500);
     setTimeout(() => i = 0, 15000);
-    setTimeout(() => typePersonal(i), 15500);
-    setTimeout(() => document.getElementById('personal').addEventListener('click', destroyPersonal), 16500);
+    setTimeout(() => typeCryptoList(i), 15500);
+    setTimeout(() => i = 0, 16000);
+    setTimeout(() => typeHikeSF(i), 16500);
+    setTimeout(() => i = 0, 17000);
+    setTimeout(() => typeTalkie(i), 17500);
+    setTimeout(() => i = 0, 18000);
+    setTimeout(() => typePersonal(i), 18500);
+    setTimeout(() => document.getElementById('personal').addEventListener('click', destroyPersonal), 19500);
 }
 
 const typeBadWelcome = (badWelcome, i) => {
@@ -127,4 +133,31 @@ const destroyPersonal = (e) => {
     const personalEl = document.getElementById('personal');
     const personalVal = personalEl.innerHTML;
     personalEl.innerHTML = personalVal.slice(0, personalVal.length - 1);
+}
+
+const typeMaterials = i => {
+    const materials = "Materials:";
+    if (i < materials.length) {
+        document.getElementById('materials').innerHTML += materials[i];
+        i++;
+        setTimeout(() => typeMaterials(i), 80);
+    }
+}
+
+const typeProfiles = i => {
+    const profiles = "Profiles:";
+    if (i < profiles.length) {
+        document.getElementById('profiles').innerHTML += profiles[i];
+        i++;
+        setTimeout(() => typeProfiles(i), 80);
+    }
+}
+
+const typeProjects = i => {
+    const projects = "Projects:";
+    if (i < projects.length) {
+        document.getElementById('projects').innerHTML += projects[i];
+        i++;
+        setTimeout(() => typeProjects(i), 80);
+    }
 }
