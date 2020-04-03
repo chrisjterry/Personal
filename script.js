@@ -1,130 +1,132 @@
 const initPage = () => {
     let i = 0;
     const badWelcome = "Welcom to Chris Terry's p";
-    typeBadWelcome(badWelcome, i);
-    setTimeout(() => i = badWelcome.length - 1, 2950);
-    setTimeout(() => eraseBadWelcome(badWelcome, i), 3000);
-    setTimeout(() => i = 6, 4000);
-    setTimeout(() => typeGoodWelcome(i), 4500);
-    setTimeout(() => i = 0, 8000);
-    setTimeout(() => typeMaterials(i), 8500);
-    setTimeout(() => i = 0, 9000);
-    setTimeout(() => typeResume(i), 9500);
-    setTimeout(() => i = 0, 10000);
-    setTimeout(() => typeProfiles(i), 10500);
-    setTimeout(() => i = 0, 11000);
-    setTimeout(() => typeGitHub(i), 11500);
-    setTimeout(() => i = 0, 12000);
-    setTimeout(() => typeLinkedIn(i), 12500);
-    setTimeout(() => i = 0, 13000);
-    setTimeout(() => typeAngelList(i), 13500);
-    setTimeout(() => i = 0, 14000);
-    setTimeout(() => typeProjects(i), 14500);
-    setTimeout(() => i = 0, 15000);
-    setTimeout(() => typeCryptoList(i), 15500);
-    setTimeout(() => i = 0, 16000);
-    setTimeout(() => typeHikeSF(i), 16500);
-    setTimeout(() => i = 0, 17000);
-    setTimeout(() => typeTalkie(i), 17500);
-    setTimeout(() => i = 0, 18000);
-    setTimeout(() => typePersonal(i), 18500);
-    setTimeout(() => document.getElementById('personal').addEventListener('click', destroyPersonal), 19500);
+    const timeouts = [];
+    timeouts.push(setTimeout(() => typeBadWelcome(badWelcome, i, timeouts), 0));
+    timeouts.push(setTimeout(() => i = badWelcome.length - 1, 2950));
+    timeouts.push(setTimeout(() => eraseBadWelcome(badWelcome, i, timeouts), 3000));
+    timeouts.push(setTimeout(() => i = 6, 4000));
+    timeouts.push(setTimeout(() => typeGoodWelcome(i, timeouts), 4500));
+    timeouts.push(setTimeout(() => i = 0, 8000));
+    timeouts.push(setTimeout(() => typeMaterials(i, timeouts), 8500));
+    timeouts.push(setTimeout(() => i = 0, 9000));
+    timeouts.push(setTimeout(() => typeResume(i, timeouts), 9500));
+    timeouts.push(setTimeout(() => i = 0, 10000));
+    timeouts.push(setTimeout(() => typeProfiles(i, timeouts), 10500));
+    timeouts.push(setTimeout(() => i = 0, 11000));
+    timeouts.push(setTimeout(() => typeGitHub(i, timeouts), 11500));
+    timeouts.push(setTimeout(() => i = 0, 12000));
+    timeouts.push(setTimeout(() => typeLinkedIn(i, timeouts), 12500));
+    timeouts.push(setTimeout(() => i = 0, 13000));
+    timeouts.push(setTimeout(() => typeAngelList(i, timeouts), 13500));
+    timeouts.push(setTimeout(() => i = 0, 14000));
+    timeouts.push(setTimeout(() => typeProjects(i, timeouts), 14500));
+    timeouts.push(setTimeout(() => i = 0, 15000));
+    timeouts.push(setTimeout(() => typeCryptoList(i, timeouts), 15500));
+    timeouts.push(setTimeout(() => i = 0, 16000));
+    timeouts.push(setTimeout(() => typeHikeSF(i, timeouts), 16500));
+    timeouts.push(setTimeout(() => i = 0, 17000));
+    timeouts.push(setTimeout(() => typeTalkie(i, timeouts), 17500));
+    timeouts.push(setTimeout(() => i = 0, 18000));
+    timeouts.push(setTimeout(() => typePersonal(i, timeouts), 18500));
+    // timeouts.push(setTimeout(() => document.getElementById('personal').addEventListener('click', destroyPersonal), 19500));
+    document.addEventListener('click', () => skipTimeouts(timeouts));    
 }
 
-const typeBadWelcome = (badWelcome, i) => {
+const typeBadWelcome = (badWelcome, i, timeouts) => {
     if (i < badWelcome.length) {
         document.getElementById('welcome').innerHTML += badWelcome[i];
         i++;
-        setTimeout(() => typeBadWelcome(badWelcome, i), 80);
+        timeouts.push(setTimeout(() => typeBadWelcome(badWelcome, i, timeouts), 80));
     }
 }
 
-const eraseBadWelcome = (badWelcome, i) => {
+const eraseBadWelcome = (badWelcome, i, timeouts) => {
     if (i > 5) {
         document.getElementById('welcome').innerHTML = badWelcome.slice(0, i);
         i--;
-        setTimeout(() => eraseBadWelcome(badWelcome, i), 60);
+        timeouts.push(setTimeout(() => eraseBadWelcome(badWelcome, i, timeouts), 60));
     }
 }
 
-const typeGoodWelcome = i => {
+const typeGoodWelcome = (i, timeouts) => {
     const goodWelcome = "Welcome to Chris Terry's personal website.";
     if (i < goodWelcome.length) {
         document.getElementById('welcome').innerHTML += goodWelcome[i];
         i++;
-        setTimeout(() => typeGoodWelcome(i), 80);
+        timeouts.push(setTimeout(() => typeGoodWelcome(i), 80));
     }
 }
 
-const typeResume = i => {
+const typeResume = (i, timeouts) => {
     const resume = "Resume";
     if (i < resume.length) {
         document.getElementById('resume').innerHTML += resume[i];
         i++;
-        setTimeout(() => typeResume(i), 80);
+        timeouts.push(setTimeout(() => typeResume(i), 80));
     }
 }
 
-const typeGitHub = i => {
+const typeGitHub = (i, timeouts) => {
     const github = "GitHub";
     if (i < github.length) {
         document.getElementById('github').innerHTML += github[i];
         i++;
-        setTimeout(() => typeGitHub(i), 80);
+        timeouts.push(setTimeout(() => typeGitHub(i), 80));
     }
 }
 
-const typeLinkedIn = i => {
+const typeLinkedIn = (i, timeouts) => {
     const linkedin = "LinkedIn";
     if (i < linkedin.length) {
         document.getElementById('linkedin').innerHTML += linkedin[i];
         i++;
-        setTimeout(() => typeLinkedIn(i), 80);
+        timeouts.push(setTimeout(() => typeLinkedIn(i), 80));
     }
 }
 
-const typeAngelList = i => {
+const typeAngelList = (i, timeouts) => {
     const angellist = "AngelList";
     if (i < angellist.length) {
         document.getElementById('angellist').innerHTML += angellist[i];
         i++;
-        setTimeout(() => typeAngelList(i), 80);
+        timeouts.push(setTimeout(() => typeAngelList(i), 80));
     }
 }
 
-const typeCryptoList = i => {
+const typeCryptoList = (i, timeouts) => {
     const cryptolist = "CryptoList";
     if (i < cryptolist.length) {
         document.getElementById('cryptolist').innerHTML += cryptolist[i];
         i++;
-        setTimeout(() => typeCryptoList(i), 80);
+        timeouts.push(setTimeout(() => typeCryptoList(i), 80));
     }
 }
 
-const typeHikeSF = i => {
+const typeHikeSF = (i, timeouts) => {
     const hikesf = "HikeSF";
     if (i < hikesf.length) {
         document.getElementById('hikesf').innerHTML += hikesf[i];
         i++;
-        setTimeout(() => typeHikeSF(i), 80);
+        timeouts.push(setTimeout(() => typeHikeSF(i), 80));
     }
 }
 
-const typeTalkie = i => {
+const typeTalkie = (i, timeouts) => {
     const talkie = "Talkie";
     if (i < talkie.length) {
         document.getElementById('talkie').innerHTML += talkie[i];
         i++;
-        setTimeout(() => typeTalkie(i), 80);
+        timeouts.push(setTimeout(() => typeTalkie(i), 80));
     }
 }
 
-const typePersonal = i => {
+const typePersonal = (i, timeouts) => {
     const personal = "Personal Website";
     if (i < personal.length) {
         document.getElementById('personal').innerHTML += personal[i];
         i++;
-        setTimeout(() => typePersonal(i), 80);
+        timeouts.push(setTimeout(() => typePersonal(i), 80));
     }
 }
 
@@ -135,7 +137,7 @@ const destroyPersonal = (e) => {
     personalEl.innerHTML = personalVal.slice(0, personalVal.length - 1);
 }
 
-const typeMaterials = i => {
+const typeMaterials = (i, timeouts) => {
     const materials = "Materials:";
     if (i < materials.length) {
         document.getElementById('materials').innerHTML += materials[i];
@@ -144,7 +146,7 @@ const typeMaterials = i => {
     }
 }
 
-const typeProfiles = i => {
+const typeProfiles = (i, timeouts) => {
     const profiles = "Profiles:";
     if (i < profiles.length) {
         document.getElementById('profiles').innerHTML += profiles[i];
@@ -153,11 +155,30 @@ const typeProfiles = i => {
     }
 }
 
-const typeProjects = i => {
+const typeProjects = (i, timeouts) => {
     const projects = "Projects:";
     if (i < projects.length) {
         document.getElementById('projects').innerHTML += projects[i];
         i++;
         setTimeout(() => typeProjects(i), 80);
     }
+}
+
+const skipTimeouts = timeouts => {
+    for (let i = 0; i < timeouts.length; i++) {
+        clearTimeout(timeouts[i]);       
+    }
+    
+    document.getElementById('welcome').innerHTML = "Welcome to Chris Terry's personal website.";
+    document.getElementById('materials').innerHTML = "Materials:";
+    document.getElementById('resume').innerHTML = "Resume";
+    document.getElementById('profiles').innerHTML = "Profiles:";
+    document.getElementById('github').innerHTML = "GitHub";
+    document.getElementById('linkedin').innerHTML = "LinkedIn";
+    document.getElementById('angellist').innerHTML = "AngelList";
+    document.getElementById('projects').innerHTML = "Projects:";
+    document.getElementById('cryptolist').innerHTML = "CryptoList";
+    document.getElementById('hikesf').innerHTML = "HikeSF";   
+    document.getElementById('talkie').innerHTML = "Talkie";
+    document.getElementById('personal').innerHTML = "Personal Website";
 }
