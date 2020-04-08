@@ -54,7 +54,7 @@ const typeGoodWelcome = (i, timeouts) => {
     if (i < goodWelcome.length) {
         document.getElementById('welcome').innerHTML += goodWelcome[i];
         i++;
-        timeouts.push(setTimeout(() => typeGoodWelcome(i), 80));
+        timeouts.push(setTimeout(() => typeGoodWelcome(i, timeouts), 80));
     }
 }
 
@@ -63,7 +63,7 @@ const typeResume = (i, timeouts) => {
     if (i < resume.length) {
         document.getElementById('resume').innerHTML += resume[i];
         i++;
-        timeouts.push(setTimeout(() => typeResume(i), 80));
+        timeouts.push(setTimeout(() => typeResume(i, timeouts), 80));
     }
 }
 
@@ -72,7 +72,7 @@ const typeGitHub = (i, timeouts) => {
     if (i < github.length) {
         document.getElementById('github').innerHTML += github[i];
         i++;
-        timeouts.push(setTimeout(() => typeGitHub(i), 80));
+        timeouts.push(setTimeout(() => typeGitHub(i, timeouts), 80));
     }
 }
 
@@ -81,7 +81,7 @@ const typeLinkedIn = (i, timeouts) => {
     if (i < linkedin.length) {
         document.getElementById('linkedin').innerHTML += linkedin[i];
         i++;
-        timeouts.push(setTimeout(() => typeLinkedIn(i), 80));
+        timeouts.push(setTimeout(() => typeLinkedIn(i, timeouts), 80));
     }
 }
 
@@ -90,7 +90,7 @@ const typeAngelList = (i, timeouts) => {
     if (i < angellist.length) {
         document.getElementById('angellist').innerHTML += angellist[i];
         i++;
-        timeouts.push(setTimeout(() => typeAngelList(i), 80));
+        timeouts.push(setTimeout(() => typeAngelList(i, timeouts), 80));
     }
 }
 
@@ -99,7 +99,7 @@ const typeCryptoList = (i, timeouts) => {
     if (i < cryptolist.length) {
         document.getElementById('cryptolist').innerHTML += cryptolist[i];
         i++;
-        timeouts.push(setTimeout(() => typeCryptoList(i), 80));
+        timeouts.push(setTimeout(() => typeCryptoList(i, timeouts), 80));
     }
 }
 
@@ -108,7 +108,7 @@ const typeHikeSF = (i, timeouts) => {
     if (i < hikesf.length) {
         document.getElementById('hikesf').innerHTML += hikesf[i];
         i++;
-        timeouts.push(setTimeout(() => typeHikeSF(i), 80));
+        timeouts.push(setTimeout(() => typeHikeSF(i, timeouts), 80));
     }
 }
 
@@ -117,7 +117,7 @@ const typeTalkie = (i, timeouts) => {
     if (i < talkie.length) {
         document.getElementById('talkie').innerHTML += talkie[i];
         i++;
-        timeouts.push(setTimeout(() => typeTalkie(i), 80));
+        timeouts.push(setTimeout(() => typeTalkie(i, timeouts), 80));
     }
 }
 
@@ -126,7 +126,7 @@ const typePersonal = (i, timeouts) => {
     if (i < personal.length) {
         document.getElementById('personal').innerHTML += personal[i];
         i++;
-        timeouts.push(setTimeout(() => typePersonal(i), 80));
+        timeouts.push(setTimeout(() => typePersonal(i, timeouts), 80));
     }
 }
 
@@ -142,7 +142,7 @@ const typeMaterials = (i, timeouts) => {
     if (i < materials.length) {
         document.getElementById('materials').innerHTML += materials[i];
         i++;
-        setTimeout(() => typeMaterials(i), 80);
+        timeouts.push(setTimeout(() => typeMaterials(i, timeouts), 80));
     }
 }
 
@@ -151,7 +151,7 @@ const typeProfiles = (i, timeouts) => {
     if (i < profiles.length) {
         document.getElementById('profiles').innerHTML += profiles[i];
         i++;
-        setTimeout(() => typeProfiles(i), 80);
+        timeouts.push(setTimeout(() => typeProfiles(i, timeouts), 80));
     }
 }
 
@@ -160,7 +160,7 @@ const typeProjects = (i, timeouts) => {
     if (i < projects.length) {
         document.getElementById('projects').innerHTML += projects[i];
         i++;
-        setTimeout(() => typeProjects(i), 80);
+        timeouts.push(setTimeout(() => typeProjects(i, timeouts), 80));
     }
 }
 
