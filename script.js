@@ -21,6 +21,8 @@ const typePassword = i => {
 };
 
 const checkPassword = () => {
+  // Please do not inspect the page and hack my website--thanks!
+
   if (passwordInput.value === 'hunter2') {
     passwordContainer.className = 'hidden';
     contentContainer.className = '';
