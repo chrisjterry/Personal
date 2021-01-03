@@ -1,14 +1,54 @@
 body {
-    background-color: black;
-    font-family: Courier;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  background-color: black;
+  font-family: Courier;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body * {
-    color: #00ff00;
-    margin-bottom: 20px;
-    text-decoration: none;
-    width: max-content;
+  color: #00ff00;
+  text-decoration: none;
+  width: max-content;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#password-container {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  margin: 0 auto;
+}
+
+#password-input {
+  background: none;
+  border: none;
+  margin-left: 2pt;
+}
+
+#password-input:focus {
+  outline: none;
+}
+
+#content-container {
+  padding: 20px;
+}
+
+.section-hidden > p:last-child {
+  display: none;
+}
+
+.section-shown > p:last-child {
+  color: white;
+}
+
+a {
+  color: inherit;
 }

@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type='text/javascript' src='script.js' async defer></script>
-    <link rel="stylesheet" href="styles.css">
-    <title>Chris Terry</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type='text/javascript' src='script.js' async defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Chris Terry</title>
 </head>
 <body onload="initPage()">
-    <p id="welcome"></p>
-    <p id="materials"></p>
-    <a id="resume" href="./chris-terry-resume.pdf"></a>
-    <p id="profiles"></p>
-    <a id="github" href="https://github.com/chrisjterry"></a>
-    <a id="linkedin" href="https://linkedin.com/in/christopher-terry/"></a>
-    <a id="angellist" href="https://angel.co/christopher-j-terry"></a>
-    <p id="projects"></p>
-    <a id="cryptolist" href="https://aa-crypto-list.herokuapp.com/"></a>
-    <a id="hikesf" href="https://hike-sf.herokuapp.com/"></a>
-    <a id="talkie" href="https://chrisjterry.github.io/Talkie/"></a>
-    <a id="personal" href=""></a>
+  <div id="password-container">
+    <p id="password-text"></p>
+    <input type="password" id="password-input" onchange="checkPassword()" />
+  </div>
+  <div id="content-container" class="hidden">
+    <p>Welcome to my website</p>
+    <div class="section-hidden" id="about" onclick="toggleSection(id)">
+      <p>About</p>
+      <p>My name is Chris and I code for posterity</p>
+    </div>
+    <div class="section-hidden" id="why-night-mode" onclick="toggleSection(id)">
+      <p>Why night mode?</p>
+      <p>There is absolutely no reason to ever use light mode</p>
+    </div>
+    <div class="section-hidden" id="github" onclick="toggleSection(id)">
+      <p>Can I see the code for this magnificent website?</p>
+      <p>
+        <a href="https://github.com/chrisjterry/Personal">Feast your eyes upon my magnum opus</a>
+      </p>
+    </div>
+    <a href="">Sign out</a>
+  </div>
 </body>
 </html>
