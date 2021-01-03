@@ -41,6 +41,10 @@ body * {
   padding: 20px;
 }
 
+.section-hidden > p:first-child:hover, .section-shown > p:first-child:hover {
+  cursor: pointer;
+}
+
 .section-hidden > p:last-child {
   display: none;
 }
